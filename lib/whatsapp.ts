@@ -6,3 +6,8 @@ export function createWhatsAppLink(productName: string) {
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 }
+
+export async function sendWhatsAppMessage(to: string, message: string): Promise<void> {
+  // Placeholder for future Meta/Twilio integration.
+  console.log("Sending message:", { to, message });
+}
