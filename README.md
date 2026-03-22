@@ -26,6 +26,46 @@ npm run dev
 - Recherche temps réel
 - Redirection WhatsApp avec message encodé
 - Pages dédiées catalogue, recherche, pharmacie et 404
+- API de réponse automatique `GET /api/test?message=...`
+- Webhook WhatsApp Meta `GET/POST /api/whatsapp`
+
+## Variables d'environnement
+
+Créer un fichier `.env.local` pour le local:
+
+```bash
+# SEO
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# OpenAI (optionnel, fallback d'extraction)
+OPENAI_API_KEY=
+
+# WhatsApp Meta Cloud API
+WHATSAPP_VERIFY_TOKEN=your_verify_token
+WHATSAPP_ACCESS_TOKEN=
+WHATSAPP_PHONE_NUMBER_ID=
+```
+
+## Webhook WhatsApp Meta
+
+URL webhook:
+
+```text
+https://ton-domaine.vercel.app/api/whatsapp
+```
+
+Configuration Meta:
+
+- Verification token: la meme valeur que `WHATSAPP_VERIFY_TOKEN`
+- Field a souscrire: `messages`
+
+Tests rapides API:
+
+```bash
+/api/test?message=doliprane
+/api/test?message=aspirine
+/api/test?message=j'ai mal a la tete
+```
 
 ## Remarque sur les données
 
